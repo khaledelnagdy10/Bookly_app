@@ -1,8 +1,7 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSeller extends StatelessWidget {
   const BestSeller({super.key});
@@ -13,7 +12,9 @@ class BestSeller extends StatelessWidget {
       return SizedBox(
         height: 125,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          padding: const EdgeInsets.symmetric(
+            vertical: 8.0,
+          ),
           child: Row(
             children: [
               AspectRatio(
@@ -29,24 +30,35 @@ class BestSeller extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: 20,
+                width: 30,
               ),
-              const Column(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'The Jungle Book',
-                    style: TextStyle(fontFamily: kGTSectraFineRegular),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * .5,
+                    child: const Text(
+                      'The Jungle Book',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontFamily: kGTSectraFineRegular),
+                    ),
                   ),
-                  Text(
-                    'J.K.Rowling',
-                    style: TextStyle(color: Colors.grey),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Text('J.K.Rowling',
+                      style: Styles.textStyle14.copyWith(color: Colors.grey)),
+                  const SizedBox(
+                    height: 3,
                   ),
                   Row(
                     children: [
                       Text(
                         r'19.99$',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: Styles.textStyle20
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                     ],
                   )
