@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,7 +19,10 @@ class RatingBook extends StatelessWidget {
               size: 16,
             )),
         const Text('4.8'),
-        const Text('(265)'),
+        Text(
+          '(265)',
+          style: Styles.textStyle14.copyWith(color: Colors.grey),
+        ),
       ],
     );
   }
