@@ -33,11 +33,8 @@ class BookDetailsBody extends StatelessWidget {
               'J.K Rowling',
               style: Styles.textStyle14.copyWith(color: Colors.grey),
             ),
-            const Row(
+            const RatingBook(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RatingBook(),
-              ],
             ),
           ],
         ),
