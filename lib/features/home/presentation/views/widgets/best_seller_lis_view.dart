@@ -1,8 +1,8 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/rating_book.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListView extends StatelessWidget {
@@ -73,7 +73,7 @@ class BestSellerListView extends StatelessWidget {
                                 style: Styles.textStyle20
                                     .copyWith(fontWeight: FontWeight.bold),
                               ),
-                              ratingBook()
+                              RatingBook()
                             ],
                           )
                         ],
@@ -85,21 +85,5 @@ class BestSellerListView extends StatelessWidget {
             ),
           );
         });
-  }
-
-  Row ratingBook() {
-    return Row(
-      children: [
-        IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              FontAwesomeIcons.solidStar,
-              color: Colors.yellow,
-              size: 16,
-            )),
-        const Text('4.8'),
-        const Text('(265)'),
-      ],
-    );
   }
 }
