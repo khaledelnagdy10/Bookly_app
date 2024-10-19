@@ -21,7 +21,7 @@ class SearchViewBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8)),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           const Row(
@@ -32,7 +32,7 @@ class SearchViewBody extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           const Expanded(child: SearchBookListView())
