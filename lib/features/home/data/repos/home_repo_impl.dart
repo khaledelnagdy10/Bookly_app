@@ -3,6 +3,7 @@ import 'package:bookly_app/core/utils/errors/faliure.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImplementation implements HomeRepo {
   @override
@@ -17,8 +18,11 @@ class HomeRepoImplementation implements HomeRepo {
         books.add(BookModel.fromJson(element));
       }
       return right(books);
-    } on Exception catch (e) {
-      throw left(ServicesFaliure());
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServicesFaliure.fromDioException(e));
+      }
+      return left(ServicesFaliure(e.toString()));
     }
   }
 
